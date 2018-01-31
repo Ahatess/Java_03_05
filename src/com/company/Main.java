@@ -5,27 +5,32 @@ import java.util.Scanner;
 public class Main {
 
 
-    static int suma;
-    static int[] mas = new int[5];
-
     public static void main(String[] args) {
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Iveskite 5 skaicius");
-        for (int i = 0; i < 5; i++) {
-
-            int skaicius = sc.nextInt();
-            mas[i] = skaicius;
-            suma += skaicius;
+        Main objektas = new Main();
+        objektas.ivedimas();
+        objektas.isvedimas();
         }
-        System.out.println("suma " + isvestis());
+        private int[]masyvas;
+        private int suma;
+
+    public void ivedimas(){
+        System.out.println("Iveskite penkis skaicius");
+        Scanner sc = new Scanner(System.in);
+        masyvas = new int[5];
+        for(int i =0;i<masyvas.length; i++){
+            System.out.println("Iveskite skaiciu nr: " + (i + 1));
+            masyvas[i] = sc.nextInt();
+            suma += masyvas[i];
+        }
     }
 
-    public static int isvestis() {
-        for (int i = 0; i < 5; i++) {
-            System.out.println(mas[i]);
+    public void isvedimas(){
+        System.out.println("==================================================");
+        for (int i = 0; i < masyvas.length; i++) {
+            System.out.println(masyvas[i]);
         }
-        return suma;
+
+        System.out.println("Suma yra: " + suma);
 
 
     }
